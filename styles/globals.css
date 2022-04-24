@@ -1,6 +1,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#__next,
+#homepage {
+  height: 100%;
+}
+
 @font-face {
   font-family: "Parisienne";
   src: url("../assets/fonts/Parisienne/Parisienne-Regular.ttf");

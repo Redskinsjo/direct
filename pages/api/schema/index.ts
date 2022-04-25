@@ -24,8 +24,8 @@ const typeDefs = gql`
   }
 
   type Query {
-      travelers(): [Traveler]
-      hoteliers(): [Hotelier]
+    travelers: [Traveler]
+    hoteliers: [Hotelier]
   }
 `;
 

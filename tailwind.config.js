@@ -26,6 +26,9 @@ module.exports = {
         ".slideup-300": {
           animation: "slideup-300 ease-out 0.5s 1",
         },
+        ".appear-disappear": {
+          animation: "appear_disappear linear 5s 1",
+        },
         ".button-gold": {
           backgroundColor: "gold",
           color: "black",

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-const TravelerSchema = new Schema({
+const UserSchema = new Schema({
   fullname: String,
   firstname: String,
   lastname: String,
@@ -10,7 +10,7 @@ const TravelerSchema = new Schema({
   phone: String,
   notes: String,
   profile: String,
+  business: String,
 });
-const TravelerModel =
-  mongoose.models.Traveler || mongoose.model("Traveler", TravelerSchema);
-export default TravelerModel;
+const UserModel = mongoose.models.User || mongoose.model("User", UserSchema);
+export default UserModel;

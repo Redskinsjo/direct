@@ -29,9 +29,8 @@ const Home: NextPage = () => {
 
       <iframe
         src="https://iframe.videodelivery.net/b7ca63b8f05e81406d34be8b8016924b?autoplay=true&muted=true&loop=true&controls=false&preload=auto"
-        className={`w-full h-full bg-transparent absolute`}
+        className={`w-full h-full bg-transparent absolute border-0`}
         allowFullScreen={true}
-        allowTransparency={true}
       ></iframe>
 
       <div className="w-58 h-16 absolute top-32 left-44">

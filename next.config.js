@@ -9,6 +9,7 @@ const nextConfig = {
       layoutRaw: true,
     },
   },
+  env: process.env.SUPER_ADMIN_TOKEN,
 };
 
 module.exports = withVideos(nextConfig);

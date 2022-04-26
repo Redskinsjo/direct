@@ -10,5 +10,8 @@ const translationsFr = {
   "form-field-profile": "Profil",
   "form-field-notes": "Notes",
   "form-field-business": "Nom hôtel",
+  "admin-login-nickname-label": "Pseudo",
+  "admin-login-password-label": "Mot de passe",
+  "admin-login-button": "Entrer",
 };
 export default translationsFr;

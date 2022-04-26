@@ -1,10 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { ApolloServer } from "apollo-server-micro";
+import { ApolloServer, AuthenticationError } from "apollo-server-micro";
 import mongoose from "mongoose";
 
 import typeDefs from "../schema";
 import resolvers from "../resolvers";
+import Admin from "../models/admin";
 
 type Data = {
   _id: string;
@@ -16,9 +17,34 @@ type Data = {
   profile: String;
 };
 
+const getUser = async (token: string) => {
+  let user;
+  if (token) {
+    user = await Admin.findOne({ token });
+  }
+  // if (!user) throw new AuthenticationError("you must be logged in");
+  return user;
+};
+
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
+  context: async ({ req }) => {
+    let token;
+
+    if (req.headers.authorization) {
+      token =
+        req.headers.authorization.split(" ")[1] ||
+        req.headers.authorization.split(" ")[0];
+    }
+
+    let user;
+    if (token) {
+      user = await getUser(token);
+    }
+
+    return { user, token };
+  },
 });
 const startServer = apolloServer.start();
 

@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative" id="homepage">
+    <div className="relative h-full" id="homepage">
       <div className="absolute mx-16 my-2">
         <span className="absolute text-white font-parisienne text-4xl z-20 top-4 left-2 slidein-30">
           Direct

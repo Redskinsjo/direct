@@ -1,3 +1,3 @@
 ## Production
 
-(Visit site in production)[https://directhotelbusiness.herokuapp.com/]
+[Visit site in production](https://directhotelbusiness.herokuapp.com/)

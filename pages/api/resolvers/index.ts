@@ -26,9 +26,7 @@ const resolvers = {
     users: async (parent: any, args: any, context: any, info: any) => {
       if (context.user) {
         const users = await User.find();
-        const travelers = users.filter((u: any) => u.profile === "traveler");
-        const hoteliers = users.filter((t: any) => t.profile === "hotelier");
-        return { travelers, hoteliers };
+        return users;
       }
       return null;
     },

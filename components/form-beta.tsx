@@ -22,7 +22,7 @@ export interface FormValues {
 
 type DataSubmit = FormValues | { [x: string]: string };
 
-const fields_original = [
+export const fields_original = [
   { label: "form-field-firstname", name: "firstname" },
   { label: "form-field-lastname", name: "lastname" },
   { label: "form-field-email", name: "email" },

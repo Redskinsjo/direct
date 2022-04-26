@@ -6,6 +6,8 @@ body,
 #__next,
 #homepage {
   height: 100%;
+}
+#homepage {
   background-color: black;
 }
 

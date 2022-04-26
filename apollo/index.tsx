@@ -16,7 +16,7 @@ const httpLink = new HttpLink({
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("admin-token");
-  console.log("token", token);
+
   return {
     headers: {
       ...headers,
@@ -27,7 +27,7 @@ const authLink = setContext((_, { headers }) => {
 
 export const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({ addTypename: false }),
   headers: { "Content-Type": "application/json" },
   credentials: "omit",
 });

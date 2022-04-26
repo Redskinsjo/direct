@@ -4,7 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 
 import { SigninAdmin } from "@/apollo/queries";
 import { client } from "@/apollo";
-import useRowsAndColumns from "./useRowsAndColumns";
+import useRowsAndColumns from "@/components/useRowsAndColumns";
 
 const AdminData: React.FC = () => {
   const [loading, setLoading] = useState(true);

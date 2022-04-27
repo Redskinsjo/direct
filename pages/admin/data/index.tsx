@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useRouter } from "next/router";
-import { DataGrid } from "@mui/x-data-grid";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import { DataGrid } from '@mui/x-data-grid';
 
-import { SigninAdmin } from "@/apollo/queries";
-import { client } from "@/apollo";
-import useRowsAndColumns from "@/components/useRowsAndColumns";
+import { SigninAdmin } from '@/apollo/queries';
+import { client } from '@/apollo';
+import useRowsAndColumns from '@/components/useRowsAndColumns';
 
 const AdminData: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -13,7 +13,7 @@ const AdminData: React.FC = () => {
 
   React.useEffect(() => {
     const checkAuth = async () => {
-      const token = router.asPath.split("?")[1];
+      const token = router.asPath.split('?')[1];
       const { data: signedIn } = await client.query({
         query: SigninAdmin,
         variables: {
@@ -22,7 +22,7 @@ const AdminData: React.FC = () => {
       });
 
       if (signedIn.signinAdmin.error) {
-        router.push("/admin");
+        router.push('/admin');
       } else {
         setLoading(false);
       }
@@ -31,7 +31,7 @@ const AdminData: React.FC = () => {
   }, []);
 
   return loading ? null : (
-    <div className="flex justify-center items-center h-full">
+    <div className='flex justify-center items-center h-full'>
       <DataGrid columns={columns} rows={rows} />
     </div>
   );

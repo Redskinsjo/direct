@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "yarn run eslint ./"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
@@ -31,21 +31,24 @@
     "uid2": "^1.0.0"
   },
   "devDependencies": {
-    "@graphql-eslint/eslint-plugin": "^3.10.3",
     "@types/crypto-js": "^4.1.1",
     "@types/node": "17.0.25",
     "@types/react": "18.0.6",
     "@types/react-dom": "18.0.2",
     "@types/uid2": "^0.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
     "autoprefixer": "^10.4.4",
-    "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5",
+    "eslint": "^8.14.0",
+    "eslint-plugin-react": "^7.29.4",
     "file-loader": "^6.2.0",
     "postcss": "^8.4.12",
+    "prettier": "2.6.2",
     "tailwindcss": "^3.0.24",
     "typescript": "4.6.3"
   },
   "engines": {
     "node": "*"
-  }
+  },
+  "peerDependencies": {}
 }

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
-import { GetSubscribedIndividuals } from "@/apollo/queries";
+import React, { useEffect, useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { GetSubscribedIndividuals } from '@/apollo/queries';
 
-import { columns } from "./columns";
+import { columns } from './columns';
 
 const useRowsAndColumns = () => {
   const { data } = useQuery(GetSubscribedIndividuals);

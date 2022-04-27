@@ -1,26 +1,26 @@
-import React from "react";
+import React from 'react';
 import {
   ApolloClient,
   ApolloProvider,
   InMemoryCache,
   HttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 const httpLink = new HttpLink({
   uri:
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/api/graphql"
-      : "/api/graphql",
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000/api/graphql'
+      : '/api/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("admin-token");
+  const token = localStorage.getItem('admin-token');
 
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
+      authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
@@ -28,8 +28,8 @@ const authLink = setContext((_, { headers }) => {
 export const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache({ addTypename: false }),
-  headers: { "Content-Type": "application/json" },
-  credentials: "omit",
+  headers: { 'Content-Type': 'application/json' },
+  credentials: 'omit',
 });
 
 export default function GraphQLProvider({ children }: any) {

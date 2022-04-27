@@ -1,7 +1,7 @@
-import React from "react";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useTranslation } from 'react-i18next';
 
 const Language: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -19,26 +19,26 @@ const Language: React.FC = () => {
   };
 
   return (
-    <div className="w-8 h-8 absolute top-4 right-32">
+    <div className='w-8 h-8 absolute top-4 right-32'>
       <div
-        className="text-2xl"
+        className='text-2xl'
         onMouseEnter={(event) => setAnchorEl(event.currentTarget)}
       >
         {i18n.language}
       </div>
       <Menu
-        id="basic-menu"
+        id='basic-menu'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         MenuListProps={{
-          "aria-labelledby": "basic-button",
+          'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={(e) => handleClick(e, "fr")} key="fr">
+        <MenuItem onClick={(e) => handleClick(e, 'fr')} key='fr'>
           FR
         </MenuItem>
-        <MenuItem onClick={(e) => handleClick(e, "en")} key="en">
+        <MenuItem onClick={(e) => handleClick(e, 'en')} key='en'>
           EN
         </MenuItem>
       </Menu>

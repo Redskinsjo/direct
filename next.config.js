@@ -1,4 +1,5 @@
-const withVideos = require("next-videos");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withVideos = require('next-videos');
 
 /** @type {import('next').NextConfig} */
 

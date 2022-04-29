@@ -3,36 +3,36 @@ import { gql } from 'apollo-server-micro';
 const typeDefs = gql`
   type Traveler {
     _id: ID
-    fullname: String
-    firstname: String
-    lastname: String
     email: String
-    phone: String
+    firstname: String
+    fullname: String
+    lastname: String
     notes: String
+    phone: String
     profile: String
   }
 
   type Hotelier {
     _id: ID
-    fullname: String
-    firstname: String
-    lastname: String
     email: String
-    phone: String
+    firstname: String
+    fullname: String
+    lastname: String
     notes: String
+    phone: String
     profile: String
   }
 
   type User {
     _id: ID
-    fullname: String
-    firstname: String
-    lastname: String
-    email: String
-    phone: String
-    notes: String
-    profile: String
     business: String
+    email: String
+    firstname: String
+    fullname: String
+    lastname: String
+    notes: String
+    phone: String
+    profile: String
   }
 
   input UserInput {
@@ -46,23 +46,23 @@ const typeDefs = gql`
   }
 
   type Admin {
-    nickname: String
     hash: String
+    nickname: String
     salt: String
     token: String
   }
 
   type LoginObject {
+    data: Admin
     error: Boolean
     message: String
-    data: Admin
   }
 
   type Query {
-    travelers: [Traveler]
     hoteliers: [Hotelier]
-    users: [User]
     signinAdmin(nickname: String, password: String, token: String): LoginObject
+    travelers: [Traveler]
+    users: [User]
   }
 
   type Mutation {

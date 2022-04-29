@@ -22,5 +22,26 @@
     "semi": "error",
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-single"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.ts"],
+      "processor": "@graphql-eslint/graphql"
+    },
+    {
+      "files": ["*.graphql"],
+      "parser": "@graphql-eslint/eslint-plugin",
+      "plugins": ["@graphql-eslint"],
+      "rules": {
+        "@graphql-eslint/known-type-names": "error",
+        "@graphql-eslint/alphabetize": [
+          "error",
+          { "fields": ["ObjectTypeDefinition"] }
+        ]
+      },
+      "parserOptions": {
+        "schema": "./pages/api/schema"
+      }
+    }
+  ]
 }

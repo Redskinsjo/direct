@@ -1,8 +1,10 @@
+/* eslint-disable quotes */
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Logo from '@/assets/images/logo.svg';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import Head from 'next/head';
 
 import FormBeta from '@/components/form-beta';
 import Language from '@/components/language';
@@ -13,6 +15,17 @@ const Home: NextPage = () => {
 
   return (
     <div className='relative h-full' id='homepage'>
+      <Head>
+        <meta
+          property='og:title'
+          content="Réserver votre chambre d'hôtel moins cher qu'avant"
+        />
+        <meta
+          property='og:description'
+          content="Organiser son séjour directement avec l'hôtel et gagner 20% sur votre réservation. Encore en bêta, renseignez votre intérêt et obtenez l'avantage en avant-première"
+        />
+        <meta name='author' content='Jonathan Carnos' />
+      </Head>
       <div className='absolute mx-16 my-2'>
         <span className='absolute text-white font-parisienne text-4xl z-20 top-4 left-2 slidein-30'>
           Direct

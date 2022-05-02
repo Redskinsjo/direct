@@ -18,13 +18,17 @@ const Home: NextPage = () => {
       <Head>
         <meta
           property='og:title'
-          content="Réserver votre chambre d'hôtel moins cher qu'avant"
+          content="Direct Hotel Business: Réserver votre chambre d'hôtel moins cher qu'avant"
         />
         <meta
           property='og:description'
           content="Organiser son séjour directement avec l'hôtel et gagner 20% sur votre réservation. Encore en bêta, renseignez votre intérêt et obtenez l'avantage en avant-première"
         />
         <meta name='author' content='Jonathan Carnos' />
+        <meta
+          name='google-site-verification'
+          content='eYz9plGMyApOd7l6TNDbC9hv1f21l_fQpnA9CgcOviA'
+        />
       </Head>
       <div className='absolute mx-16 my-2'>
         <span className='absolute text-white font-parisienne text-4xl z-20 top-4 left-2 slidein-30'>

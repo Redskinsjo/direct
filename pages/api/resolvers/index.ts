@@ -34,12 +34,13 @@ const resolvers = {
       if (context.user) {
         return { error: false, message: '', data: context.user };
       }
-
-      const admin = await Admin.findOne({ nickname: args.nickname });
+      const admin = null;
+      // const admin = await Admin.findOne({ nickname: args.nickname });
 
       if (admin) {
         if (
-          sha256(args.password + admin.salt).toString(base64) === admin.hash
+          sha256(args.password + (admin as any).salt).toString(base64) ===
+          (admin as any).hash
         ) {
           return { error: false, message: '', data: admin };
         } else {
